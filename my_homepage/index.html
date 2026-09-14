@@ -1,46 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김정후 - 개인 소개</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>김정후</h1>
-            <p class="affiliation">국립공주대학교 기계자동차공학부</p>
-            <!-- 아래 한 줄 소개는 본인의 비전에 맞게 수정 가능합니다 -->
-            <p class="intro">미래 모빌리티와 자율운항 시스템의 혁신을 주도하고자 하는 엔지니어입니다.</p>
-        </header>
-        
-        <main>
-            <section class="info-section">
-                <h2>📚 학업 정보</h2>
-                <ul>
-                    <li><strong>수강 과목:</strong> 미래첨단기술의이해 I</li>
-                </ul>
-            </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="개인 소개 페이지" />
+    <title>김정후 | Personal Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">PERSONAL PROFILE</p>
+        <!-- 아래 이름과 한 줄 소개를 원하는 내용으로 바꿔 주세요. -->
+        <h1>김정후</h1>
+        <p class="tagline">기계자동차공학부 기게공학전공</p>
+        <p class="affiliation">국립공주대학교 기계자동차공학부</p>
+      </header>
 
-            <section class="info-section">
-                <h2>🎯 관심 분야</h2>
-                <div class="tags">
-                    <span class="tag">자율운항</span>
-                    <span class="tag">제어</span>
-                    <span class="tag">AI</span>
-                </div>
-            </section>
-        </main>
+      <section class="section" aria-labelledby="about-title">
+        <div class="section-label" id="about-title">ABOUT</div>
+        <p class="intro">
+          새로운 기술이 실제 움직임으로 이어지는 순간에 관심을 두고 배우고 있습니다.
+        </p>
+      </section>
 
-        <footer>
-            <h2>📫 연락처 및 링크</h2>
-            <div class="links">
-                <!-- 아래 괄호 안의 링크와 텍스트를 수정하세요 -->
-                <p>Email: <a href="mailto:여기에_이메일_입력@gmail.com">[이메일 주소 입력]</a></p>
-                <p>GitHub: <a href="https://github.com/여기에_깃허브_아이디_입력" target="_blank">[GitHub 링크 입력]</a></p>
-            </div>
-        </footer>
-    </div>
-</body>
+      <section class="section" aria-labelledby="interest-title">
+        <div class="section-label" id="interest-title">INTERESTS</div>
+        <ul class="chips" aria-label="관심 분야">
+          <li>자율운항</li>
+          <li>제어</li>
+          <li>AI</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="class-title">
+        <div class="section-label" id="class-title">CURRENT CLASS</div>
+        <p class="course">미래첨단기술의이해 I</p>
+      </section>
+
+      <footer class="contact">
+        <!-- href 안의 주소만 본인 이메일과 GitHub 주소로 바꿔 주세요. -->
+        <a href="wjdgnrla0309@gmail.com">your-email@example.com <span>↗</span></a>
+        <a href="https://wjdgnrla0309.github.io" target="_blank" rel="noreferrer">github.com/your-github-id <span>↗</span></a>
+      </footer>
+    </main>
+  </body>
 </html>
