@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0d1117"/>
+  <g opacity="0.2" stroke="#8b949e" stroke-width="1">
+    <path d="M50 90H750M50 180H750M50 270H750M50 360H750"/>
+    <path d="M120 50V450M260 50V450M400 50V450M540 50V450M680 50V450"/>
+  </g>
+  <rect x="140" y="165" width="520" height="150" rx="18" fill="#121820" stroke="#00d4ff" stroke-width="3"/>
+  <rect x="180" y="200" width="170" height="80" rx="12" fill="#0b1520" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="430" y="200" width="170" height="80" rx="12" fill="#0b1520" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M270 260H350L430 260" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M350 200V170H400V200" stroke="#00d4ff" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="400" y="110" text-anchor="middle" fill="#e5f3ff" font-size="28" font-family="Arial, sans-serif" font-weight="700">Automation Study</text>
+</svg>

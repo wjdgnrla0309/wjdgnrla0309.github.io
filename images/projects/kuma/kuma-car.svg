@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#b8d8ff" stroke-width="1">
+    <path d="M40 80H760M40 170H760M40 260H760M40 350H760"/>
+    <path d="M120 40V460M260 40V460M400 40V460M540 40V460M680 40V460"/>
+  </g>
+  <rect x="130" y="210" width="540" height="120" rx="18" fill="#182331" stroke="url(#accent)" stroke-width="3"/>
+  <circle cx="250" cy="340" r="58" fill="none" stroke="#38bdf8" stroke-width="10"/>
+  <circle cx="550" cy="340" r="58" fill="none" stroke="#38bdf8" stroke-width="10"/>
+  <circle cx="250" cy="340" r="24" fill="#0d1117" stroke="#00d4ff" stroke-width="4"/>
+  <circle cx="550" cy="340" r="24" fill="#0d1117" stroke="#00d4ff" stroke-width="4"/>
+  <path d="M220 230L300 180H520L590 230" fill="none" stroke="#8bdcff" stroke-width="8" stroke-linecap="round"/>
+  <text x="400" y="120" text-anchor="middle" fill="#e5f3ff" font-size="32" font-family="Arial, sans-serif" font-weight="700">KUMA Formula Student</text>
+  <text x="400" y="155" text-anchor="middle" fill="#8b949e" font-size="20" font-family="Arial, sans-serif">Vehicle Dynamics / Racing Platform</text>
+</svg>
