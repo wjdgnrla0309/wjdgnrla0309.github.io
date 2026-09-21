@@ -5,8 +5,8 @@ export function Research() {
   return (
     <section id="research" className="section-shell section-block">
       <div className="section-heading">
-        <p className="eyebrow">Research Interests</p>
-        <h2>Thermal systems and energy-efficient mobility.</h2>
+        <p className="eyebrow">연구 관심 분야</p>
+        <h2>열 시스템과 에너지 효율적인 모빌리티.</h2>
       </div>
 
       <div className="card-grid research-grid">

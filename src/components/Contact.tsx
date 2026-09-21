@@ -4,14 +4,13 @@ export function Contact() {
   return (
     <section id="contact" className="section-shell section-block contact-section">
       <div className="section-heading centered">
-        <p className="eyebrow">Contact</p>
-        <h2>Let&apos;s Connect</h2>
+        <p className="eyebrow">연락처</p>
+        <h2>함께 이야기해요</h2>
       </div>
 
       <div className="contact-card">
         <p>
-          I&apos;m interested in automotive thermal management, engineering research, and mobility
-          technology.
+          자동차 열관리, 공학 연구와 모빌리티 기술에 관심이 있습니다.
         </p>
 
         <div className="contact-list">
@@ -34,7 +33,7 @@ export function Contact() {
 
         <a href="/resume.pdf" className="primary-btn contact-download" download>
           <Download size={18} />
-          Download CV
+          이력서 다운로드
         </a>
       </div>
     </section>

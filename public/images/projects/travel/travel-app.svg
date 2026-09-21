@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="지구본 일러스트">
+  <defs>
+    <radialGradient id="space"><stop stop-color="#173149"/><stop offset="1" stop-color="#080a0d"/></radialGradient>
+    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#0369a1"/></linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#space)"/>
+  <circle cx="400" cy="240" r="164" fill="url(#ocean)" stroke="#7dd3fc" stroke-width="4"/>
+  <g fill="none" stroke="#bae6fd" stroke-width="3" opacity=".55">
+    <ellipse cx="400" cy="240" rx="80" ry="164"/><ellipse cx="400" cy="240" rx="164" ry="65"/>
+    <path d="M241 200h318M241 280h318M400 76v328"/>
+  </g>
+  <g fill="#34d399">
+    <path d="M315 112l58 4 29 27-15 34-42 12-18 40-44-11-19-45 22-34z"/>
+    <path d="M451 178l61 4 39 34-11 38-37 11-14 57-33 40-27-25 13-47-31-29 7-46z"/>
+    <path d="M330 301l45 7 21 35-20 45-40-14-24-39z"/>
+  </g>
+  <path d="M220 401h360" stroke="#64748b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M400 404v45" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M317 455h166" stroke="#94a3b8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M571 126c45 26 72 68 82 115" fill="none" stroke="#f59e0b" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 17"/>
+  <path d="M650 236l-16-22 28 4z" fill="#f59e0b"/>
+</svg>

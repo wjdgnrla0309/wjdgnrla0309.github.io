@@ -4,8 +4,8 @@ export function About() {
   return (
     <section id="about" className="section-shell section-block">
       <div className="section-heading">
-        <p className="eyebrow">About Me</p>
-        <h2>Engineering student focused on thermal systems and mobility.</h2>
+        <p className="eyebrow">소개</p>
+        <h2>열 시스템과 모빌리티를 연구하는 공학도입니다.</h2>
       </div>
 
       <motion.div
@@ -17,39 +17,28 @@ export function About() {
       >
         <div className="about-copy">
           <p>
-            I am a mechanical engineering student at Kongju National University, studying
-            mechanical and automotive engineering with a strong interest in the thermal systems
-            of modern vehicles, especially electric vehicles.
+            공주대학교에서 기계·자동차공학을 전공하며, 특히 전기차를 비롯한 미래 자동차의 열 시스템에 관심을 두고 있습니다.
           </p>
           <p>
-            I am currently an undergraduate researcher in the Thermal & Energy Solutions
-            Laboratory, where I am exploring research questions related to battery, motor,
-            inverter, and HVAC thermal management.
+            현재 Thermal & Energy Solutions Laboratory 학부연구생으로 배터리, 모터, 인버터 및 HVAC 열관리 주제를 탐구하고 있습니다.
           </p>
           <p>
-            I prefer solving engineering problems through design, experimentation,
-            simulation, and prototype development rather than theoretical study alone. My
-            experience includes Formula Student activities, Arduino-based control systems,
-            automation concept work, and engineering web development.
+            이론 학습에 머무르지 않고 설계, 실험, 시뮬레이션과 시제품 제작을 통해 공학 문제를 해결하는 것을 좋아합니다.
           </p>
         </div>
 
         <div className="info-panel">
           <div>
-            <span className="label">Name</span>
-            <strong>Kim Jeonghu</strong>
+            <span className="label">이름</span><strong>Jeonghu Kim</strong>
           </div>
           <div>
-            <span className="label">University</span>
-            <strong>Kongju National University</strong>
+            <span className="label">대학교</span><strong>공주대학교</strong>
           </div>
           <div>
-            <span className="label">Major</span>
-            <strong>Mechanical & Automotive Engineering</strong>
+            <span className="label">전공</span><strong>기계자동차공학</strong>
           </div>
           <div>
-            <span className="label">Position</span>
-            <strong>Undergraduate Student / Researcher</strong>
+            <span className="label">현재 활동</span><strong>학부생 / 학부연구생</strong>
           </div>
         </div>
       </motion.div>

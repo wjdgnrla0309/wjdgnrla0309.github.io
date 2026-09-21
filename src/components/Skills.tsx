@@ -5,8 +5,8 @@ export function Skills() {
   return (
     <section id="skills" className="section-shell section-block">
       <div className="section-heading">
-        <p className="eyebrow">Skills</p>
-        <h2>Technical foundations and engineering tools.</h2>
+        <p className="eyebrow">기술</p>
+        <h2>공학 기초 지식과 활용 도구.</h2>
       </div>
 
       <div className="skills-grid">

@@ -1,13 +1,9 @@
 import { GitBranch } from 'lucide-react'
 
 const navItems = [
-  { label: 'About', id: 'about' },
-  { label: 'Research', id: 'research' },
-  { label: 'Experience', id: 'experience' },
-  { label: 'Projects', id: 'projects' },
-  { label: 'Skills', id: 'skills' },
-  { label: 'Education', id: 'education' },
-  { label: 'Contact', id: 'contact' },
+  { label: '소개', id: 'about' }, { label: '연구', id: 'research' },
+  { label: '경험', id: 'experience' }, { label: '프로젝트', id: 'projects' },
+  { label: '기술', id: 'skills' }, { label: '학력', id: 'education' }, { label: '연락처', id: 'contact' },
 ]
 
 type NavbarProps = {
@@ -22,10 +18,6 @@ export function Navbar({ activeSection }: NavbarProps) {
   return (
     <header className="site-header">
       <nav className="navbar" aria-label="Main navigation">
-        <a href="#top" className="brand" aria-label="KJ home">
-          KJ.
-        </a>
-
         <div className="nav-links" role="menubar" aria-label="Main sections">
           {navItems.map((item) => (
             <button
