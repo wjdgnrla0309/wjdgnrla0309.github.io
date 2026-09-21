@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0d1117"/>
+  <path d="M170 280H630L590 350H210Z" fill="#121820" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M250 200H550L590 280H210Z" fill="#151f2b" stroke="#00d4ff" stroke-width="3"/>
+  <circle cx="275" cy="355" r="44" fill="none" stroke="#38bdf8" stroke-width="8"/>
+  <circle cx="525" cy="355" r="44" fill="none" stroke="#38bdf8" stroke-width="8"/>
+  <circle cx="275" cy="355" r="18" fill="#0d1117" stroke="#00d4ff" stroke-width="4"/>
+  <circle cx="525" cy="355" r="18" fill="#0d1117" stroke="#00d4ff" stroke-width="4"/>
+  <path d="M350 210L390 160H470L510 210" fill="none" stroke="#00d4ff" stroke-width="6" stroke-linecap="round"/>
+  <text x="400" y="95" text-anchor="middle" fill="#e5f3ff" font-size="28" font-family="Arial, sans-serif" font-weight="700">Arduino Line Tracing Car</text>
+</svg>

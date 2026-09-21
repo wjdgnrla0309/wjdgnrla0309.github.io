@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0d1117"/>
+  <circle cx="400" cy="250" r="150" fill="none" stroke="#38bdf8" stroke-width="3" opacity="0.7"/>
+  <circle cx="400" cy="250" r="110" fill="none" stroke="#00d4ff" stroke-width="3" opacity="0.5"/>
+  <path d="M400 100L600 420H200Z" fill="none" stroke="#c8d7ff" stroke-width="4" opacity="0.8"/>
+  <circle cx="400" cy="250" r="26" fill="#00d4ff" opacity="0.8"/>
+  <path d="M300 330L400 260L500 330" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+  <text x="400" y="72" text-anchor="middle" fill="#e5f3ff" font-size="28" font-family="Arial, sans-serif" font-weight="700">Lunar Landing Device</text>
+</svg>
