@@ -1,26 +1,3 @@
+import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '../data/projects'
-
-type ProjectCardProps = {
-  project: Project
-  onSelect: (project: Project) => void
-}
-
-export function ProjectCard({ project, onSelect }: ProjectCardProps) {
-  return (
-    <article className="project-card" onClick={() => onSelect(project)}>
-      <div className="project-content">
-        <p className="project-category">{project.category}</p>
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <div className="project-tech-list">
-          {project.technologies.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-        <button type="button" className="text-link">
-          자세히 보기
-        </button>
-      </div>
-    </article>
-  )
-}
+export function ProjectCard({project,index,onSelect}:{project:Project;index:number;onSelect:(p:Project)=>void}){return <article className="project-card"><button onClick={()=>onSelect(project)} aria-label={`${project.title} 상세 보기`}><div className="project-visual"><img src={project.image} alt="" loading="lazy"/><span>0{index+1}</span></div><div className="project-content"><p className="project-category">{project.category}</p><h3>{project.title}</h3><p>{project.description}</p><div className="project-meta">{project.technologies.join(' · ')}</div><span className="view-project">VIEW PROJECT <ArrowUpRight size={17}/></span></div></button></article>}

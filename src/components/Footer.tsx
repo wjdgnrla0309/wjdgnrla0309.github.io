@@ -1,3 +1,1 @@
-export function Footer() {
-  return <footer className="site-footer"><p>© 2026 Jeonghu Kim</p><p>기계자동차공학</p><p>React로 제작</p></footer>
-}
+export function Footer(){return <footer className="site-footer"><strong>KIM JEONGHU</strong><span>MECHANICAL ENGINEERING PORTFOLIO</span><span>© 2026 · DESIGNED &amp; BUILT BY KIM JEONGHU</span></footer>}
