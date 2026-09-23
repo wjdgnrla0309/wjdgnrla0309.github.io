@@ -10,3 +10,6 @@
 
 .hero-profile{width:100%;max-width:460px;justify-self:center;border:1px solid var(--line);padding:14px;background:var(--bg2)}.profile-photo{width:100%;height:auto}.profile-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:16px 2px 2px;font:500 .6rem "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--muted)}
 @media(max-width:900px){.hero-profile{max-width:380px}}
+
+/* Header controls and compact profile portrait */
+.f1-mark{width:78px;height:36px;padding:0;color:var(--text)}.f1-mark svg{display:block;width:100%;height:100%}.nav-actions{display:flex;align-items:center;gap:16px}.language-button{border:1px solid var(--line);background:transparent;color:var(--text);padding:7px 9px;font:500 .64rem 'IBM Plex Mono',monospace;letter-spacing:.05em}.language-button:hover{border-color:var(--blue);color:var(--blue)}.hero-profile{max-width:330px;padding:12px}.profile-caption{padding:14px 2px 2px}@media(max-width:900px){.hero-profile{max-width:280px}}
