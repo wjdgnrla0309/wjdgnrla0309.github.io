@@ -4,11 +4,18 @@ import { useLanguage } from '../LanguageContext'
 export function TechnicalArticle() {
   const { language } = useLanguage()
   const ko = language === 'ko'
+  const imageUrl = `${import.meta.env.BASE_URL}images/articles/auto-journal-2026-10-kuma.png`
 
   return <article className="technical-article" aria-labelledby="kuma-article-title" lang="ko">
     <div className="technical-article-label">
+      <a className="technical-article-preview" href={imageUrl} target="_blank" rel="noopener noreferrer" lang={language}>
+        <img src={imageUrl} alt={ko ? 'Auto Journal 2026년 10월호 KUMA 파워트레인 기고, 60–61쪽' : 'KUMA powertrain technical article in Auto Journal, October 2026, pages 60–61'} loading="lazy" width={1287} height={852} />
+        <span>{ko ? '원문 확대 보기 ↗ (새 탭)' : 'View full-size article ↗ (new tab)'}</span>
+      </a>
+      <div className="technical-article-type">
       <FileText size={20} aria-hidden="true" />
       <p className="technical-label">Technical Article{ko ? ' / 기고' : ''}</p>
+      </div>
     </div>
     <div className="technical-article-content">
       <p className="technical-article-context">KUMA / POWERTRAIN</p>
