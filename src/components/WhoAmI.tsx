@@ -7,7 +7,6 @@ const save = (s: Store) => { try { localStorage.setItem(KEY, JSON.stringify(s)) 
 const SCORES = [['현실형 R', 18, 73], ['탐구형 I', 11, 58], ['예술형 A', 6, 39], ['사회형 S', 8, 41], ['진취형 E', 14, 54], ['관습형 C', 9, 46]] as const
 const JOBS = '건설 및 광업기계 설치 및 정비원, 건축시공기술자, 경기감독 및 코치, 금융관리자, 기술영업원, 네트워크관리자, 데이터베이스 개발자, 도선사, 보일러 설치 및 정비원, 사회학연구원, 사회복지학연구원, 정치학연구원, 행정학연구원, 경영학연구원, 언론학연구원, 경제학연구원, 생산관리 사무원, 선장 및 항해사, 소방공학기술자, 스포츠강사, 웹엔지니어, 인쇄기조작원, 장학사, 철도기관차 및 전동차정비원, 측량 및 지리정보기술자, 토목감리기술자, 항공기조종사, 헬리콥터조종사'
 const NOTICE = "※ 이름·학번·얼굴 사진은 넣지 않습니다. 공개하기 싫은 칸은 '비공개'라고 적어도 됩니다."
-const SUB = '공학자의 진로설계 2026 · 1주차 과제 · 5장 이내로 작성'
 
 export function WhoAmI({ onClose }: { onClose: () => void }) {
   const [store, setStore] = useState<Store>(load)
@@ -28,13 +27,13 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
     }
     return <div className="wa-img">{store[id] ?? def ? <img src={store[id] ?? def} alt={def ? '영암 트랙데이에서 트랙을 주행하는 KUMA 포뮬러 차량' : label} /> : <p>{label}</p>}{edit && <label className="wa-btn">이미지 선택<input type="file" accept="image/*" hidden onChange={onFile} /></label>}</div>
   }
-  const Head = (n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>번호: {E(`no${n}`, "____")}</p></div><small>{n} / 5</small></header>
+  const Head = (_n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>열관리 분야를 향해 성장 중</p></div><small>KIM JEONGHU · 기계·자동차공학</small></header>
   const slides = [
     <>
       {Head(1, "나는 누구인가?")}
-      <p className="technical-label">{SUB}</p>
+      <p className="technical-label">KIM JEONGHU · 기계·자동차공학 · 열관리 분야를 향해 성장 중</p>
       <h4>나를 한 문장으로 소개한다면</h4>
-      <blockquote>{E("intro", '"설계·실험·데이터를 오가며 열교환기·냉각 시스템의 열유동을 해석하고 최적화하는 기계·자동차공학도"')}</blockquote>
+      <blockquote>{E("intro", '"설계·실험·데이터를 오가며 열관리 분야를 배우고 도전하는, 가능성을 키워 가는 기계·자동차공학도"')}</blockquote>
       <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card"><b>키워드 {i}</b>{E(`kw${i}`, ["탐구", "구현", "시스템적 사고"][i - 1])}</div>)}</div>
       <div className="wa-card"><b>꼭 담을 내용</b>
         <p>① 인생곡선: 가장 좋았던 순간과 힘들었던 순간, 그때 내가 한 일 (2장)</p>
@@ -55,35 +54,34 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
     </>,
     <>
       {Head(3, "2) 직업 관련 검사 결과")}
-      <h4>고용24(work24.go.kr) → 직업심리검사 → 직업선호도검사 S형 (약 25분)</h4>
       <div className="wa-grid2">
-        <div className="wa-card"><b>흥미 육각형 · 검사일 2026.11.17</b><Hex /><p className="wa-hint">(선택) 커리어넷 이공계전공적합도검사 결과도 함께</p></div>
+        <div className="wa-card"><b>흥미 육각형 · 검사일 2026.11.17</b><Hex /><div className="wa-type"><span>나의 유형</span><strong>RE형</strong><p>현실형(R) 73 + 진취형(E) 54</p></div></div>
         <div className="wa-card"><b>직업 흥미 유형별 점수</b>
           <table className="wa-table"><thead><tr><th>유형</th><th>원점수</th><th>표준점수</th></tr></thead><tbody>{SCORES.map(([n, r, s]) => <tr key={n}><td>{n}</td><td>{r}</td><td>{s}</td></tr>)}</tbody></table>
           <p className="wa-hint">표준점수 60 이상 높음 · 41–59 중간 · 40 이하 낮음 (결과표 기준)</p></div>
       </div>
       <div className="wa-grid2">
         <div className="wa-card"><b>나의 흥미 코드</b><strong className="wa-code">RE</strong><p>현실형 + 진취형 (결과표 대표 흥미 코드)</p></div>
-        <div className="wa-card"><b>추천 직업 중 끌리는 것 3개</b>{[1, 2, 3].map(i => <p key={i}>{i}. {E(`job${i}`, "[아래 추천 직업에서 선택]")}</p>)}</div>
+        <div className="wa-card"><b>추천 직업 중 끌리는 것 3개</b>{[1, 2, 3].map(i => <p key={i}>{i}. {E(`job${i}`, ["소방공학기술자 (배터리 열폭주·열안전 연구와 연결)", "기술영업원 (열관리 부품·시스템 기술 제안)", "철도기관차 및 전동차정비원 (구동계·냉각 시스템 이해)"][i - 1])}</p>)}</div>
       </div>
       <details className="wa-card"><summary>결과표의 추천 직업 전체 보기</summary><p>{JOBS}</p></details>
       <div className="wa-grid2">
         <div className="wa-card"><b>결과가 나와 맞는 점</b>{E("fit", "현실형(표준점수 73)이 가장 높은 것은 KUMA Formula Student에서 차량 시스템을 다루고, 연구실에서 실험 장치 자동화를 검토하는 내 경험과 맞습니다.")}</div>
-        <div className="wa-card"><b>의외였던 점</b>{E("odd", "[왜 의외였는지 한 줄]")}</div>
+        <div className="wa-card"><b>의외였던 점</b>{E("odd", "연구 지향이라 탐구형(I)이 가장 높을 줄 알았는데 58점으로 중간이었고, 진취형(E)이 대표 코드로 나온 점입니다. 설계·해석에 그치지 않고 기술을 직접 제안하고 실행하는 성향으로 해석했습니다.")}</div>
       </div>
     </>,
     <>
       {Head(4, "3) 나를 설명하는 다섯 가지")}
       <h4>수업 시간에 쓴 자기이해 표를 옮기고, 이유를 한 줄씩 덧붙입니다</h4>
-      {[['meaning', '나에게 의미 있는 일', '[무엇이, 어떤 순서로 중요한가 (예: 성취 > 인정 > 안정)]'], ['joy', '나에게 즐거움을 주는 일', '설계와 실험, 데이터 해석, 실제 제작을 오가며 공학 문제를 구체적인 시스템으로 구현할 때 즐겁습니다.'], ['skill', '내가 잘할 수 있는 일', 'MATLAB으로 KUMA 차량의 0–75 m 가속 성능을 시뮬레이션했고, React로 팀 웹사이트와 여행 추천 웹앱을 직접 만들었습니다.'], ['hard', '내가 어려워하는 일', '[무엇이, 왜 어려운가 / 어떻게 보완하고 있나]'], ['moment', '가장 기억에 남는 순간', '[어떤 순간이었고, 왜 기억에 남는가]']].map(([k, t, d]) => <div key={k} className="wa-row"><b>{t}</b>{E(k, d)}</div>)}
+      {[['meaning', '나에게 의미 있는 일', '성장 > 성취 > 협업 순으로 중요합니다. 어제보다 나은 설계를 만들고, 그 결과가 실제 성능으로 확인될 때, 팀과 함께 만들어 낼 때 의미를 느낍니다.'], ['joy', '나에게 즐거움을 주는 일', '설계와 실험, 데이터 해석, 실제 제작을 오가며 공학 문제를 구체적인 시스템으로 구현할 때 즐겁습니다.'], ['skill', '내가 잘할 수 있는 일', '새로운 도구를 빠르게 익혀 직접 만들어 보는 일을 잘합니다. 팀 활동에서 맡은 일은 끝까지 책임지고 마무리합니다.'], ['hard', '내가 어려워하는 일', '처음부터 완벽한 결과를 내려다 시작이 늦어지는 점이 어렵습니다. 작은 단위로 먼저 만들어 검증하고, 팀원의 피드백을 받아 반복하며 보완하고 있습니다.'], ['moment', '가장 기억에 남는 순간', 'KUMA 포뮬러 차량이 트랙을 달리는 모습을 처음 본 순간입니다. 도면과 해석 결과로만 보던 시스템이 실제로 움직이며 성능을 내는 것을 보고 공학의 보람을 느꼈습니다.']].map(([k, t, d]) => <div key={k} className="wa-row"><b>{t}</b>{E(k, d)}</div>)}
     </>,
     <>
       {Head(5, "4) 나를 보여주는 장면, 그리고 다음")}
       <h4>나를 잘 설명해 주는 경험·활동 2~3개와, 지금 관심 있는 방향</h4>
       <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card">{Img(`ph${i}`, "[사진·이미지] (선택, 얼굴 없이도 OK)", i === 2 ? "/images/whoami/kuma-trackday.jpg" : undefined)}<b>경험 {i}: {E(`ex${i}t`, ["Thermal & Energy Solutions Laboratory 학부연구생", "2026 영암 트랙데이 (KUMA)", "웹 프로젝트 (KUMA 팀 사이트·여행 추천)"][i - 1])}</b>{E(`ex${i}d`, ["수작업 코팅·건조 공정의 편차를 줄이기 위해 직교좌표계 모션 플랫폼 기반 자동화를 검토하고 있습니다. 실험의 재현성을 높이려는 탐구형·실행형 면모를 보여 줍니다.", "KUMA 팀과 함께 영암 트랙데이에 다녀왔고, 포뮬러 차량이 트랙을 주행하는 현장을 직접 경험했습니다. 차량을 시스템 전체로 보려는 관심을 보여 줍니다.", "React·Vite로 팀 웹사이트를, TourAPI·Kakao API로 여행 추천 웹앱을 만들었습니다. 정보를 사용자 흐름에 맞게 구조화하는 구현력을 보여 줍니다."][i - 1])}</div>)}</div>
       <div className="wa-grid3">
-        <div className="wa-card"><b>관심 있는 산업·직무</b>{E("field", "진로 목표: 열교환기·냉각부품의 열유동 해석 및 설계·최적화 R&D. 자동차뿐 아니라 공조·히트펌프·데이터센터 냉각으로 적용 산업을 확대. (검사 결과표 희망직업: 기계공학기술자, 에너지기술자)")}</div>
-        <div className="wa-card"><b>이 수업에서 얻고 싶은 것</b>{E("goal", "검사 결과(RE)와 내 경험을 근거로 열유동 해석·냉각 설계 R&D 진로 방향을 더 구체적으로 정리하는 것.")}</div>
+        <div className="wa-card"><b>관심 있는 산업·직무</b>{E("field", "진로 목표: 열관리 분야의 연구자·엔지니어. 자동차에서 시작해 공조·히트펌프·데이터센터 냉각까지 배우며 관심 분야를 넓혀 가는 중. (검사 결과표 희망직업: 기계공학기술자, 에너지기술자)")}</div>
+        <div className="wa-card"><b>이 수업에서 얻고 싶은 것</b>{E("goal", "검사 결과(RE)와 내 경험을 근거로 열관리 분야 진로 방향을 더 구체적으로 정리하고, 앞으로 무엇을 배울지 계획하는 것.")}</div>
         <div className="wa-card"><b>발표 때 꼭 하고 싶은 한 마디</b>{E("last", "[3분 발표의 마지막 문장]")}</div>
       </div>
     </>,

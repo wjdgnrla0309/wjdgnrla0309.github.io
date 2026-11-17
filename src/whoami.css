@@ -14,3 +14,9 @@
 .wa-bar small{font-size:.95rem}.wa-tab,.wa-btn{font-size:.95rem;padding:10px 18px;font-weight:600}.wa-curve>i{font-size:.9rem}.wa-card summary{font-size:1rem}.wa-hex{max-width:340px}
 @media(max-width:900px){.wa-overlay{font-size:17px}.wa-slide{padding:24px}.wa-row{grid-template-columns:1fr}}
 .wa-overlay .wa-card b,.wa-overlay .wa-tab,.wa-overlay .wa-btn,.wa-overlay .wa-curve>i,.wa-overlay .technical-label,.wa-overlay .wa-table{font-family:inherit}.wa-overlay .wa-card b{font-size:1.05rem}
+
+/* 흥미 유형 강조 */
+.wa-type{margin-top:18px;padding:18px 20px;border:1px solid var(--blue);background:rgba(74,158,255,.08);text-align:center;display:grid;gap:6px}
+.wa-type span{font-size:.95rem;font-weight:600;color:var(--muted);letter-spacing:.05em}
+.wa-type strong{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;line-height:1;color:var(--blue)}
+.wa-type p{margin:0;font-size:1.05rem;font-weight:600;color:var(--text)}
