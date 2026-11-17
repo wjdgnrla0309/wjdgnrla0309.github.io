@@ -6,7 +6,6 @@ const save = (s: Store) => { try { localStorage.setItem(KEY, JSON.stringify(s)) 
 // 직업선호도검사(S형) 결과표 값 (R·I·A·S·E·C 순서)
 const SCORES = [['현실형 R', 18, 73], ['탐구형 I', 11, 58], ['예술형 A', 6, 39], ['사회형 S', 8, 41], ['진취형 E', 14, 54], ['관습형 C', 9, 46]] as const
 const JOBS = '건설 및 광업기계 설치 및 정비원, 건축시공기술자, 경기감독 및 코치, 금융관리자, 기술영업원, 네트워크관리자, 데이터베이스 개발자, 도선사, 보일러 설치 및 정비원, 사회학연구원, 사회복지학연구원, 정치학연구원, 행정학연구원, 경영학연구원, 언론학연구원, 경제학연구원, 생산관리 사무원, 선장 및 항해사, 소방공학기술자, 스포츠강사, 웹엔지니어, 인쇄기조작원, 장학사, 철도기관차 및 전동차정비원, 측량 및 지리정보기술자, 토목감리기술자, 항공기조종사, 헬리콥터조종사'
-const NOTICE = "※ 이름·학번·얼굴 사진은 넣지 않습니다. 공개하기 싫은 칸은 '비공개'라고 적어도 됩니다."
 
 export function WhoAmI({ onClose }: { onClose: () => void }) {
   const [store, setStore] = useState<Store>(load)
@@ -27,19 +26,14 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
     }
     return <div className="wa-img">{store[id] ?? def ? <img src={store[id] ?? def} alt={def ? '영암 트랙데이에서 KUMA 팀원들과 포뮬러 차량 앞에서 찍은 단체사진' : label} /> : <p>{label}</p>}{edit && <label className="wa-btn">이미지 선택<input type="file" accept="image/*" hidden onChange={onFile} /></label>}</div>
   }
-  const Head = (_n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>열관리 분야를 향해 성장 중</p></div><small>KIM JEONGHU · 기계·자동차공학</small></header>
+  const Head = (_n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>기계·자동차공학 · 열관리에 관심</p></div><small>KIM JEONGHU</small></header>
   const slides = [
     <>
       {Head(1, "나는 누구인가?")}
-      <p className="technical-label">KIM JEONGHU · 기계·자동차공학 · 열관리 분야를 향해 성장 중</p>
       <h4>나를 한 문장으로 소개한다면</h4>
-      <blockquote>{E("intro", '"설계·실험·데이터를 오가며 열관리 분야를 배우고 도전하는, 가능성을 키워 가는 기계·자동차공학도"')}</blockquote>
-      <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card"><b>키워드 {i}</b>{E(`kw${i}`, ["탐구", "구현", "시스템적 사고"][i - 1])}</div>)}</div>
-      <div className="wa-card"><b>꼭 담을 내용</b>
-        <p>① 인생곡선: 가장 좋았던 순간과 힘들었던 순간, 그때 내가 한 일 (2장)</p>
-        <p>② 직업 관련 검사 결과: 고용24 직업선호도검사 S형 결과와 나의 해석 (3장)</p>
-        <p>③ 나를 잘 설명하는 내용: 자기이해 다섯 가지, 나를 보여주는 경험 (4~5장)</p>
-        <p>→ 발표는 1인 3분. 이 다섯 장만 보고도 '어떤 사람인지' 알 수 있게 써 주세요.</p></div>
+      <blockquote>{E("intro", '"재수와 군 복무를 거쳐 돌아온 만큼, 끝까지 해내는 끈기로 직접 만들고 배우며 열관리 분야를 향해 나아가는 기계·자동차공학도"')}</blockquote>
+      <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card"><b>키워드 {i}</b>{E(`kw${i}`, ["끈기", "구현", "시스템적 사고"][i - 1])}</div>)}</div>
+
     </>,
     <>
       {Head(2, "인생곡선")}
@@ -101,7 +95,7 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
         <button className="wa-btn" onClick={() => { if (confirm('입력한 내용을 모두 지울까요?')) { try { localStorage.removeItem(KEY) } catch { /* 저장소 접근 불가 시 화면 상태만 초기화 */ } setStore({}) } }}>초기화</button>
       </div>
     </div>
-    <div className={`wa-slide${edit ? ' editing' : ''}`}>{slides[page]}<footer className="wa-foot">{NOTICE}</footer></div>
+    <div className={`wa-slide${edit ? ' editing' : ''}`}>{slides[page]}</div>
     <div className="wa-bar"><button className="wa-btn" onClick={() => go(page - 1)} disabled={page === 0}>← 이전</button><small>{edit ? '편집 모드: 점선 칸을 클릭해 바로 수정하세요. 내용은 이 브라우저에 자동 저장됩니다.' : '내용 수정은 편집 모드를 켜세요. 흐린 기울임 칸은 직접 작성할 칸입니다.'}</small><button className="wa-btn" onClick={() => go(page + 1)} disabled={page === 4}>다음 →</button></div>
   </div></div>
 }
