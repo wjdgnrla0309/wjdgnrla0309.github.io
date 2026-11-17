@@ -34,7 +34,7 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
       {Head(1, "나는 누구인가?")}
       <p className="technical-label">{SUB}</p>
       <h4>나를 한 문장으로 소개한다면</h4>
-      <blockquote>{E("intro", '"설계·실험·데이터를 오가며 열관리 시스템을 눈에 보이는 결과로 만드는 기계·자동차공학도"')}</blockquote>
+      <blockquote>{E("intro", '"설계·실험·데이터를 오가며 열교환기·냉각 시스템의 열유동을 해석하고 최적화하는 기계·자동차공학도"')}</blockquote>
       <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card"><b>키워드 {i}</b>{E(`kw${i}`, ["탐구", "구현", "시스템적 사고"][i - 1])}</div>)}</div>
       <div className="wa-card"><b>꼭 담을 내용</b>
         <p>① 인생곡선: 가장 좋았던 순간과 힘들었던 순간, 그때 내가 한 일 (2장)</p>
@@ -82,8 +82,8 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
       <h4>나를 잘 설명해 주는 경험·활동 2~3개와, 지금 관심 있는 방향</h4>
       <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card">{Img(`ph${i}`, "[사진·이미지] (선택, 얼굴 없이도 OK)", i === 2 ? "/images/whoami/kuma-trackday.jpg" : undefined)}<b>경험 {i}: {E(`ex${i}t`, ["Thermal & Energy Solutions Laboratory 학부연구생", "2026 영암 트랙데이 (KUMA)", "웹 프로젝트 (KUMA 팀 사이트·여행 추천)"][i - 1])}</b>{E(`ex${i}d`, ["수작업 코팅·건조 공정의 편차를 줄이기 위해 직교좌표계 모션 플랫폼 기반 자동화를 검토하고 있습니다. 실험의 재현성을 높이려는 탐구형·실행형 면모를 보여 줍니다.", "KUMA 팀과 함께 영암 트랙데이에 다녀왔고, 포뮬러 차량이 트랙을 주행하는 현장을 직접 경험했습니다. 차량을 시스템 전체로 보려는 관심을 보여 줍니다.", "React·Vite로 팀 웹사이트를, TourAPI·Kakao API로 여행 추천 웹앱을 만들었습니다. 정보를 사용자 흐름에 맞게 구조화하는 구현력을 보여 줍니다."][i - 1])}</div>)}</div>
       <div className="wa-grid3">
-        <div className="wa-card"><b>관심 있는 산업·직무</b>{E("field", "자동차 열관리: EV 배터리 냉각, 모터·인버터 냉각, 히트펌프/HVAC. (검사 결과표 희망직업: 기계공학기술자, 에너지기술자)")}</div>
-        <div className="wa-card"><b>이 수업에서 얻고 싶은 것</b>{E("goal", "검사 결과(RE)와 내 경험을 근거로 열관리 분야 진로 방향을 더 구체적으로 정리하는 것.")}</div>
+        <div className="wa-card"><b>관심 있는 산업·직무</b>{E("field", "진로 목표: 열교환기·냉각부품의 열유동 해석 및 설계·최적화 R&D. 자동차뿐 아니라 공조·히트펌프·데이터센터 냉각으로 적용 산업을 확대. (검사 결과표 희망직업: 기계공학기술자, 에너지기술자)")}</div>
+        <div className="wa-card"><b>이 수업에서 얻고 싶은 것</b>{E("goal", "검사 결과(RE)와 내 경험을 근거로 열유동 해석·냉각 설계 R&D 진로 방향을 더 구체적으로 정리하는 것.")}</div>
         <div className="wa-card"><b>발표 때 꼭 하고 싶은 한 마디</b>{E("last", "[3분 발표의 마지막 문장]")}</div>
       </div>
     </>,
