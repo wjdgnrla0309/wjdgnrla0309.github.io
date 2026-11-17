@@ -25,7 +25,7 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
       const f = e.target.files?.[0]; if (!f) return
       const r = new FileReader(); r.onload = () => set(id, String(r.result)); r.readAsDataURL(f)
     }
-    return <div className="wa-img">{store[id] ?? def ? <img src={store[id] ?? def} alt={def ? '영암 트랙데이에서 트랙을 주행하는 KUMA 포뮬러 차량' : label} /> : <p>{label}</p>}{edit && <label className="wa-btn">이미지 선택<input type="file" accept="image/*" hidden onChange={onFile} /></label>}</div>
+    return <div className="wa-img">{store[id] ?? def ? <img src={store[id] ?? def} alt={def ? '영암 트랙데이에서 KUMA 팀원들과 포뮬러 차량 앞에서 찍은 단체사진' : label} /> : <p>{label}</p>}{edit && <label className="wa-btn">이미지 선택<input type="file" accept="image/*" hidden onChange={onFile} /></label>}</div>
   }
   const Head = (_n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>열관리 분야를 향해 성장 중</p></div><small>KIM JEONGHU · 기계·자동차공학</small></header>
   const slides = [
@@ -42,18 +42,18 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
         <p>→ 발표는 1인 3분. 이 다섯 장만 보고도 '어떤 사람인지' 알 수 있게 써 주세요.</p></div>
     </>,
     <>
-      {Head(2, "1) 인생곡선")}
+      {Head(2, "인생곡선")}
       <h4>0세부터 지금까지, 만족도가 높았던 때와 낮았던 때를 곡선으로 그립니다</h4>
-      <div className="wa-curve"><i>만족 +</i><i>만족 −</i><i>0세</i><i>현재</i>{Img("curve", "[곡선을 직접 그리거나, 손으로 그린 그림을 사진으로 붙여도 됩니다]")}</div>
+      <div className="wa-curve">{store.curve ? Img("curve", "인생곡선") : <LifeCurve />}</div>
       <p className="wa-hint">최고점·최저점에 짧은 이름표를 달아 주세요</p>
       <div className="wa-grid2">
-        <div className="wa-card"><b>가장 좋았던 순간</b><p>언제였나요? {E("best1", "[입력]")}</p><p>그때 '내가 한 일'은? {E("best2", "[입력]")}</p></div>
-        <div className="wa-card"><b>가장 힘들었던 순간</b><p>언제였나요? {E("low1", "[입력]")}</p><p>그때 '내가 한 일'은? {E("low2", "[입력]")}</p></div>
+        <div className="wa-card"><b>가장 좋았던 순간</b><p>언제였나요? {E("best1", "대학 입학 후 성적장학금을 받았을 때입니다. 재수와 군 복무를 거쳐 노력이 결과로 확인된 순간이라 가장 행복했습니다. (중학교 시절도 마음 편히 행복했던 때입니다.)")}</p><p>그때 '내가 한 일'은? {E("best2", "수업을 빠짐없이 듣고, 모르는 부분은 끝까지 찾아보고 복습하며 꾸준히 공부했습니다.")}</p></div>
+        <div className="wa-card"><b>가장 힘들었던 순간</b><p>언제였나요? {E("low1", "2022년 재수 시절. 원하던 결과가 나오지 않아 한 해를 더 준비하던 때입니다.")}</p><p>그때 '내가 한 일'은? {E("low2", "공부 계획을 매일 점검하며 끝까지 버텼고, 그 결과 공주대학교 기계·자동차공학과에 입학했습니다.")}</p></div>
       </div>
-      <div className="wa-card"><b>여기서 찾은 가치어 3개</b>{E("values", "[예] 성취, 인정, 안정, 탐구, 협력")}<p>→ 1장의 키워드와 연결</p></div>
+      <div className="wa-card"><b>여기서 찾은 가치어 3개</b>{E("values", "끈기, 성장, 책임감")}<p>→ 1장의 키워드와 연결</p></div>
     </>,
     <>
-      {Head(3, "2) 직업 관련 검사 결과")}
+      {Head(3, "직업 관련 검사 결과")}
       <div className="wa-grid2">
         <div className="wa-card"><b>흥미 육각형 · 검사일 2026.11.17</b><Hex /><div className="wa-type"><span>나의 유형</span><strong>RE형</strong><p>현실형(R) 73 + 진취형(E) 54</p></div></div>
         <div className="wa-card"><b>직업 흥미 유형별 점수</b>
@@ -71,18 +71,18 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
       </div>
     </>,
     <>
-      {Head(4, "3) 나를 설명하는 다섯 가지")}
+      {Head(4, "나를 설명하는 다섯 가지")}
       <h4>수업 시간에 쓴 자기이해 표를 옮기고, 이유를 한 줄씩 덧붙입니다</h4>
       {[['meaning', '나에게 의미 있는 일', '성장 > 성취 > 협업 순으로 중요합니다. 어제보다 나은 설계를 만들고, 그 결과가 실제 성능으로 확인될 때, 팀과 함께 만들어 낼 때 의미를 느낍니다.'], ['joy', '나에게 즐거움을 주는 일', '설계와 실험, 데이터 해석, 실제 제작을 오가며 공학 문제를 구체적인 시스템으로 구현할 때 즐겁습니다.'], ['skill', '내가 잘할 수 있는 일', '새로운 도구를 빠르게 익혀 직접 만들어 보는 일을 잘합니다. 팀 활동에서 맡은 일은 끝까지 책임지고 마무리합니다.'], ['hard', '내가 어려워하는 일', '처음부터 완벽한 결과를 내려다 시작이 늦어지는 점이 어렵습니다. 작은 단위로 먼저 만들어 검증하고, 팀원의 피드백을 받아 반복하며 보완하고 있습니다.'], ['moment', '가장 기억에 남는 순간', 'KUMA 포뮬러 차량이 트랙을 달리는 모습을 처음 본 순간입니다. 도면과 해석 결과로만 보던 시스템이 실제로 움직이며 성능을 내는 것을 보고 공학의 보람을 느꼈습니다.']].map(([k, t, d]) => <div key={k} className="wa-row"><b>{t}</b>{E(k, d)}</div>)}
     </>,
     <>
-      {Head(5, "4) 나를 보여주는 장면, 그리고 다음")}
+      {Head(5, "나를 보여주는 장면, 그리고 다음")}
       <h4>나를 잘 설명해 주는 경험·활동 2~3개와, 지금 관심 있는 방향</h4>
-      <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card">{Img(`ph${i}`, "[사진·이미지] (선택, 얼굴 없이도 OK)", i === 2 ? "/images/whoami/kuma-trackday.jpg" : undefined)}<b>경험 {i}: {E(`ex${i}t`, ["Thermal & Energy Solutions Laboratory 학부연구생", "2026 영암 트랙데이 (KUMA)", "웹 프로젝트 (KUMA 팀 사이트·여행 추천)"][i - 1])}</b>{E(`ex${i}d`, ["수작업 코팅·건조 공정의 편차를 줄이기 위해 직교좌표계 모션 플랫폼 기반 자동화를 검토하고 있습니다. 실험의 재현성을 높이려는 탐구형·실행형 면모를 보여 줍니다.", "KUMA 팀과 함께 영암 트랙데이에 다녀왔고, 포뮬러 차량이 트랙을 주행하는 현장을 직접 경험했습니다. 차량을 시스템 전체로 보려는 관심을 보여 줍니다.", "React·Vite로 팀 웹사이트를, TourAPI·Kakao API로 여행 추천 웹앱을 만들었습니다. 정보를 사용자 흐름에 맞게 구조화하는 구현력을 보여 줍니다."][i - 1])}</div>)}</div>
+      <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card">{(i === 2 || edit || store[`ph${i}`]) && Img(`ph${i}`, "사진 추가 (선택)", i === 2 ? "/images/whoami/kuma-team.jpg" : undefined)}<b>경험 {i}: {E(`ex${i}t`, ["바이브코딩으로 만든 KUMA 동아리 홈페이지", "2026 영암 트랙데이 (KUMA)", "재수·군 복무 후 성적장학금"][i - 1])}</b>{E(`ex${i}d`, ["AI와 함께 코딩하는 바이브코딩으로 KUMA 동아리 홈페이지를 직접 만들었습니다. 코드를 처음부터 다 아는 건 아니지만, 필요한 기능을 정하고 결과를 확인하며 고쳐 가는 과정에서 만들고 싶은 것을 실제로 구현해 내는 힘을 키웠습니다.", "KUMA 팀과 영암 트랙데이에서 포뮬러 차량이 실제로 주행하는 모습을 직접 확인했습니다. 설계가 실제 성능으로 이어지는 과정을 보며 차량을 시스템 전체로 이해하고 싶다는 목표가 더 분명해졌습니다.", "재수와 군 복무를 거쳐 대학에 돌아온 뒤, 꾸준히 공부해 성적장학금을 받았습니다. 돌아가는 길이 길었지만 끝까지 해내는 힘이 생겼고, 이것이 제가 가진 가장 큰 강점입니다."][i - 1])}</div>)}</div>
       <div className="wa-grid3">
-        <div className="wa-card"><b>관심 있는 산업·직무</b>{E("field", "진로 목표: 열관리 분야의 연구자·엔지니어. 자동차에서 시작해 공조·히트펌프·데이터센터 냉각까지 배우며 관심 분야를 넓혀 가는 중. (검사 결과표 희망직업: 기계공학기술자, 에너지기술자)")}</div>
-        <div className="wa-card"><b>이 수업에서 얻고 싶은 것</b>{E("goal", "검사 결과(RE)와 내 경험을 근거로 열관리 분야 진로 방향을 더 구체적으로 정리하고, 앞으로 무엇을 배울지 계획하는 것.")}</div>
-        <div className="wa-card"><b>발표 때 꼭 하고 싶은 한 마디</b>{E("last", "[3분 발표의 마지막 문장]")}</div>
+        <div className="wa-card"><b>관심 있는 산업·직무</b>{E("field", "전동화 시대의 핵심 과제인 열관리(Thermal Management)에 관심이 있습니다. 자동차에서 출발해 공조·히트펌프, 데이터센터 냉각까지 적용 범위를 넓혀 가며 에너지 효율을 높이는 기계·에너지 엔지니어를 목표로 합니다. (검사 결과표 희망직업: 기계공학기술자, 에너지기술자)")}</div>
+        <div className="wa-card"><b>이 수업에서 얻고 싶은 것</b>{E("goal", "현실형·진취형(RE) 검사 결과와 제 경험을 근거로 진로 방향을 구체화하고, 이를 학습·연구·프로젝트 계획으로 연결하는 것입니다.")}</div>
+        <div className="wa-card"><b>발표 때 꼭 하고 싶은 한 마디</b>{E("last", "돌아온 길이 길었던 만큼, 앞으로는 더 단단하게 배우고 도전하겠습니다.")}</div>
       </div>
     </>,
   ]
@@ -113,5 +113,41 @@ function Hex() {
     {[.25, .5, .75, 1].map(k => <polygon key={k} points={SCORES.map((_, i) => pt(i, R * k)).join(' ')} fill="none" stroke="currentColor" strokeOpacity=".2" />)}
     <polygon points={poly} fill="#4a9eff" fillOpacity=".35" stroke="#4a9eff" strokeWidth="2" />
     {SCORES.map(([n, , s], i) => { const [x, y] = pt(i, R + 18).split(',').map(Number); return <text key={n} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize="10" fill="currentColor">{n.slice(-1)} {s}</text> })}
+  </svg>
+}
+
+// 인생곡선: 2003년생 · 2021 수능 · 2022 재수 · 2023.3 입대 · 이후 복학·연구 활동
+const LC = [
+  { y: 2003, v: 0, t: '' }, { y: 2010, v: 1.5, t: '' }, { y: 2016, v: 4, t: '' },
+  { y: 2017.5, v: 4.5, t: '행복' }, { y: 2019, v: 1.5, t: '' },
+  { y: 2021.9, v: -2, t: '수능' }, { y: 2022.5, v: -4, t: '재수' },
+  { y: 2023.0, v: 1, t: '대학 합격' }, { y: 2023.3, v: -1.5, t: '입대' },
+  { y: 2024, v: 0, t: '군 복무' }, { y: 2024.75, v: 2, t: '전역' },
+  { y: 2025.2, v: 2.5, t: '복학' }, { y: 2025.8, v: 5, t: '성적장학금' }, { y: 2026.8, v: 4, t: '현재' },
+]
+// 가로축: 최근이 더 중요하므로 어린 시절은 압축하고 현재에 가까울수록 넓게 배치 (연도 → 0~1)
+const ANCH: [number, number][] = [[2003, 0], [2010, .07], [2016.2, .19], [2019.2, .3], [2022.2, .47], [2023, .58], [2026.8, 1]]
+const pos = (y: number) => { for (let i = 1; i < ANCH.length; i++) { const [y0, p0] = ANCH[i - 1], [y1, p1] = ANCH[i]; if (y <= y1) return p0 + ((y - y0) / (y1 - y0)) * (p1 - p0) } return 1 }
+const MILE: [number, string][] = [[2019.2, '고등학교 입학']]
+function LifeCurve() {
+  const W = 1000, H = 340, L = 70, R = 30, T = 70, B = 44
+  const x = (y: number) => L + pos(y) * (W - L - R)
+  const yy = (v: number) => T + ((5 - v) / 10) * (H - T - B)
+  const pts = LC.map(p => [x(p.y), yy(p.v)] as const)
+  let d = `M${pts[0][0]} ${pts[0][1]}`
+  for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], mx = (x0 + x1) / 2; d += ` C${mx} ${y0} ${mx} ${y1} ${x1} ${y1}` }
+  return <svg viewBox={`0 0 ${W} ${H}`} className="wa-lc" role="img" aria-label="인생곡선">
+    <g stroke="#c4ccd5" strokeWidth="2.5" strokeLinecap="round" fill="none">
+      <line x1={L} x2={L} y1={T - 14} y2={H - B} /><line x1={L} x2={W - R + 8} y1={yy(0)} y2={yy(0)} />
+      <path d={`M${L - 6} ${T - 6} L${L} ${T - 16} L${L + 6} ${T - 6}`} /><path d={`M${W - R + 2} ${yy(0) - 6} L${W - R + 12} ${yy(0)} L${W - R + 2} ${yy(0) + 6}`} />
+    </g>
+    {MILE.map(([yr, n]) => <g key={n}><line x1={x(yr)} x2={x(yr)} y1={T - 14} y2={H - B} stroke="var(--muted)" strokeDasharray="3 5" opacity=".6" />
+      <text x={x(yr) + 6} y={T - 18} fill="var(--text)" fontSize="15" fontWeight="600">{n} · {Math.floor(yr)}</text>
+      </g>)}
+    <text x={x(2003)} y={H - 16} textAnchor="start" fill="#c4ccd5" fontSize="15" fontWeight="600">2003 출생</text>
+    <text x={x(2026.8)} y={H - 16} textAnchor="middle" fill="#c4ccd5" fontSize="15" fontWeight="600">2026</text>
+    <path d={d} fill="none" stroke="var(--blue)" strokeWidth="3.5" strokeLinecap="round" />
+    {LC.map((p, i) => p.t && <g key={i}><circle cx={x(p.y)} cy={yy(p.v)} r="6" fill="var(--bg)" stroke="var(--blue)" strokeWidth="3" />
+      <text x={x(p.y)} y={yy(p.v) + (p.v >= 0 ? -14 : 24)} textAnchor="middle" fill="var(--text)" fontSize="16" fontWeight="600">{p.t}</text></g>)}
   </svg>
 }

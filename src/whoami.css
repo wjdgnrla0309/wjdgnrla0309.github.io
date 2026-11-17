@@ -20,3 +20,4 @@
 .wa-type span{font-size:.95rem;font-weight:600;color:var(--muted);letter-spacing:.05em}
 .wa-type strong{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;line-height:1;color:var(--blue)}
 .wa-type p{margin:0;font-size:1.05rem;font-weight:600;color:var(--text)}
+.wa-lc{width:100%;height:auto;max-height:440px;display:block}
