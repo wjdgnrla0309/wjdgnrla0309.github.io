@@ -49,3 +49,18 @@ button.technical-article-preview{padding:0;background:var(--bg2);text-align:left
 .eyebrow,.technical-label,.row-index,.profile-caption,.hero-copy h1 span,.hero-tags,.site-footer,.instrument-head,.instrument-foot{letter-spacing:.06em;font-weight:600}
 .profile-caption{font-size:.95rem;color:#c4ccd5}
 .eyebrow,.technical-label,.row-index{font-size:.95rem}
+
+/* Follow the available width while keeping Korean words together. */
+:where(h1, h2, h3, h4, p, li, blockquote, dd) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+:where(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+:where(p, li, blockquote) {
+  text-wrap: pretty;
+}
+:where(.about-copy p, .hero-copy p, .focus-row p, .modal-content p, .technical-article p) {
+  max-inline-size: 65ch;
+}

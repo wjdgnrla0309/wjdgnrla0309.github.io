@@ -21,3 +21,26 @@
 .wa-type strong{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;line-height:1;color:var(--blue)}
 .wa-type p{margin:0;font-size:1.05rem;font-weight:600;color:var(--text)}
 .wa-lc{width:100%;height:auto;max-height:440px;display:block}
+
+.wa-slide > *,
+.wa-card,
+.wa-row > * {
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.wa-slide blockquote {
+  max-inline-size: 60ch;
+  line-height: 1.7;
+}
+.wa-ed {
+  white-space: pre-line;
+}
+@media (max-width: 600px) {
+  .wa-panel { width: calc(100% - 24px); }
+  .wa-slide { padding: 16px; }
+  .wa-card, .wa-row { padding: 14px; }
+  .wa-head { flex-wrap: wrap; gap: 6px 12px; }
+  .wa-bar > div { flex-wrap: wrap; }
+  .wa-slide blockquote { font-size: 1.05rem; }
+}
