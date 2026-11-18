@@ -6,8 +6,6 @@ import { About } from './components/About'
 import { Research } from './components/Research'
 import { Experience } from './components/Experience'
 import { Projects } from './components/Projects'
-import { Skills } from './components/Skills'
-import { Education } from './components/Education'
 import { WhoAmI } from './components/WhoAmI'
 import './whoami.css'
 import { Contact } from './components/Contact'
@@ -15,7 +13,7 @@ import { Footer } from './components/Footer'
 import './App.css'
 import { LanguageProvider } from './LanguageContext'
 
-const sections = ['about', 'research', 'experience', 'projects', 'skills', 'education', 'contact']
+const sections = ['about', 'research', 'experience', 'projects', 'contact']
 export default function App() {
   const [activeSection, setActiveSection] = useState('about')
   const [showTop, setShowTop] = useState(false)
@@ -30,5 +28,5 @@ export default function App() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => { observer.disconnect(); window.removeEventListener('scroll', onScroll) }
   }, [])
-  return <LanguageProvider><div className="page-shell"><Navbar activeSection={activeSection} onOpenWho={() => setShowWho(true)} /><main><Hero /><About /><Research /><Experience /><Projects /><Skills /><Education /><Contact /></main><button className={`scroll-top ${showTop ? 'visible' : ''}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="맨 위로 이동"><ArrowUp size={18} /></button><Footer />{showWho && <WhoAmI onClose={() => setShowWho(false)} />}</div></LanguageProvider>
+  return <LanguageProvider><div className="page-shell"><Navbar activeSection={activeSection} onOpenWho={() => setShowWho(true)} /><main><Hero /><About /><Research /><Experience /><Projects /><Contact /></main><button className={`scroll-top ${showTop ? 'visible' : ''}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="맨 위로 이동"><ArrowUp size={18} /></button><Footer />{showWho && <WhoAmI onClose={() => setShowWho(false)} />}</div></LanguageProvider>
 }

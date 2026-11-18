@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../LanguageContext'
 import { F1Mark } from './F1Mark'
-const navItems = { ko: [['소개','about'],['연구','research'],['경험','experience'],['프로젝트','projects'],['역량','skills'],['학력','education'],['Who am I','whoami'],['연락처','contact']], en: [['ABOUT','about'],['RESEARCH','research'],['EXPERIENCE','experience'],['PROJECTS','projects'],['SKILLS','skills'],['EDUCATION','education'],['WHO AM I','whoami'],['CONTACT','contact']] } as const
+const navItems = { ko: [['소개','about'],['연구','research'],['경험','experience'],['프로젝트','projects'],['Who am I','whoami'],['연락처','contact']], en: [['ABOUT','about'],['RESEARCH','research'],['EXPERIENCE','experience'],['PROJECTS','projects'],['WHO AM I','whoami'],['CONTACT','contact']] } as const
 export function Navbar({ activeSection, onOpenWho }: { activeSection: string; onOpenWho: () => void }) {
   const [open, setOpen] = useState(false)
   const { language, toggleLanguage } = useLanguage()

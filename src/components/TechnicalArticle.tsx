@@ -22,6 +22,7 @@ export function TechnicalArticle() {
     <div className="technical-article-content">
       <p className="technical-article-context">KUMA / POWERTRAIN</p>
       <h3 id="kuma-article-title">트랙 위에서 증명한 공학의 본질: KUMA 파워트레인 팀 첫 포뮬러 도전기</h3>
+      {!ko && <p className="article-title-en" lang="en">English: Proving the essence of engineering on the track — the KUMA powertrain team’s first Formula challenge (translated title)</p>}
       <p lang={language}>{ko
         ? 'KUMA 파워트레인 팀의 첫 포뮬러 도전 경험을 담은 기술 기고.'
         : 'A technical article on the KUMA powertrain team’s first Formula challenge.'}</p>
