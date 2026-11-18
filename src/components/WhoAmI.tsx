@@ -26,12 +26,12 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
     }
     return <div className="wa-img">{store[id] ?? def ? <img src={store[id] ?? def} alt={def ? '영암 트랙데이에서 KUMA 팀원들과 포뮬러 차량 앞에서 찍은 단체사진' : label} /> : <p>{label}</p>}{edit && <label className="wa-btn">이미지 선택<input type="file" accept="image/*" hidden onChange={onFile} /></label>}</div>
   }
-  const Head = (_n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>기계·자동차공학 · 열관리에 관심</p></div><small>KIM JEONGHU</small></header>
+  const Head = (_n: number, t: string) => <header className="wa-head"><div><h3>{t}</h3><p>기계자동차공학 · 열관리에 관심</p></div><small>KIM JEONGHU</small></header>
   const slides = [
     <>
       {Head(1, "나는 누구인가?")}
       <h4>나를 한 문장으로 소개한다면</h4>
-      <blockquote>{E("intro", '"재수와 군 복무를 거쳤지만 포기하지 않고, 직접 만들어 보며 배우고 있는 기계·자동차공학도입니다. 최근에는 열관리 분야에 관심을 갖고 있습니다."')}</blockquote>
+      <blockquote>{E("intro", '"직접 만들고 실험하며 배우는 기계자동차공학도입니다. 차량 제작에 참여하며 배운 것을 실제로 적용해 보고, 열교환과 냉각을 공부하며 자동차 열관리에 대한 이해를 넓혀 가고 있습니다."')}</blockquote>
       <div className="wa-grid3">{[1, 2, 3].map(i => <div key={i} className="wa-card"><b>키워드 {i}</b>{E(`kw${i}`, ["끈기", "구현", "시스템적 사고"][i - 1])}</div>)}</div>
 
     </>,
@@ -42,7 +42,7 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
       <p className="wa-hint">최고점·최저점에 짧은 이름표를 달아 주세요</p>
       <div className="wa-grid2">
         <div className="wa-card"><b>가장 좋았던 순간</b><p>{E("best1", "대학에 입학해 성적장학금을 받았을 때가 가장 행복했습니다. 재수와 군 복무를 거쳐 돌아왔는데, 그 노력이 결과로 확인되어 정말 뿌듯했습니다. 마음 편했던 중학교 시절도 행복한 기억으로 남아 있습니다.")}</p><p>그때 '내가 한 일'은? {E("best2", "수업에 빠지지 않고 참석했고, 모르는 내용은 끝까지 찾아보고 복습했습니다.")}</p></div>
-        <div className="wa-card"><b>가장 힘들었던 순간</b><p>{E("low1", "2022년 재수 시절이 가장 힘들었습니다. 원하던 결과가 나오지 않아 한 해를 더 준비해야 했고, 그만큼 많이 지쳐 있었습니다.")}</p><p>그때 '내가 한 일'은? {E("low2", "학습 계획을 매일 점검하며 끝까지 버텼고, 그 결과 공주대학교 기계·자동차공학과에 입학할 수 있었습니다.")}</p></div>
+        <div className="wa-card"><b>가장 힘들었던 순간</b><p>{E("low1", "2022년 재수 시절이 가장 힘들었습니다. 원하던 결과가 나오지 않아 한 해를 더 준비해야 했고, 그만큼 많이 지쳐 있었습니다.")}</p><p>그때 '내가 한 일'은? {E("low2", "학습 계획을 매일 점검하며 끝까지 버텼고, 그 결과 공주대학교 기계자동차공학과에 입학할 수 있었습니다.")}</p></div>
       </div>
       <div className="wa-card"><b>여기서 찾은 가치어 3개</b>{E("values", "끈기, 성장, 책임감")}<p>→ 1장의 키워드와 연결</p></div>
     </>,
@@ -95,7 +95,7 @@ export function WhoAmI({ onClose }: { onClose: () => void }) {
       </div>
     </div>
     <div className={`wa-slide${edit ? ' editing' : ''}`}>{slides[page]}</div>
-    <div className="wa-bar"><button className="wa-btn" onClick={() => go(page - 1)} disabled={page === 0}>← 이전</button><small>{edit ? '편집 모드: 점선 칸을 클릭해 바로 수정하세요. 내용은 이 브라우저에 자동 저장됩니다.' : '내용 수정은 편집 모드를 켜세요. 흐린 기울임 칸은 직접 작성할 칸입니다.'}</small><button className="wa-btn" onClick={() => go(page + 1)} disabled={page === 4}>다음 →</button></div>
+    <div className="wa-bar"><button className="wa-btn" onClick={() => go(page - 1)} disabled={page === 0}>← 이전</button>{edit && <small>편집 모드: 점선 칸을 클릭해 바로 수정하세요. 내용은 이 브라우저에 자동 저장됩니다.</small>}<button className="wa-btn" onClick={() => go(page + 1)} disabled={page === 4}>다음 →</button></div>
   </div></div>
 }
 
